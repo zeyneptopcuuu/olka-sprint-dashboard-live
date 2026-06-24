@@ -1,0 +1,66 @@
+#!/bin/bash
+# OLKA Dashboard - Quick Setup Script
+# Bu script yapılması gereken adımları gösterir
+
+echo "🚀 OLKA Sprint Dashboard - GitHub Setup Checklist"
+echo "=================================================="
+echo ""
+
+# Checklist
+echo "📋 Yapılması Gerekenler:"
+echo ""
+echo "[ ] 1. Jira API Token Al"
+echo "    👉 https://id.atlassian.com/manage-profile/security/api-tokens"
+echo "    ✍️  Token'ı not et (sonra göremeyeceksin!)"
+echo ""
+
+echo "[ ] 2. GitHub Repository Oluştur"
+echo "    👉 https://github.com/new"
+echo "    📝 Name: olka-sprint-dashboard-live"
+echo "    ✅ Public"
+echo "    🔄 Add .gitignore: Python"
+echo ""
+
+echo "[ ] 3. Dosyaları Repo'ya Ekle"
+echo "    📁 update_dashboard.py"
+echo "    📁 .github/workflows/update.yml"
+echo "    📁 docs/index.html"
+echo "    📁 README.md"
+echo ""
+
+echo "[ ] 4. GitHub Secrets Ekle"
+echo "    👉 Settings → Secrets and variables → Actions"
+echo "    🔑 JIRA_EMAIL = your-email@example.com"
+echo "    🔑 JIRA_API_TOKEN = (step 1'den)"
+echo "    🔑 JIRA_CLOUD_ID = 501735f2-facf-4778-8cd4-8e1c19904057"
+echo ""
+
+echo "[ ] 5. GitHub Pages Aktif Et"
+echo "    👉 Settings → Pages"
+echo "    📍 Source: Deploy from a branch"
+echo "    📍 Branch: main"
+echo "    📍 Folder: /docs"
+echo ""
+
+echo "[ ] 6. Workflow'u Test Et"
+echo "    👉 Actions → Run workflow"
+echo "    ✅ Logs'u izle"
+echo "    ✅ docs/index.html güncellendi mi?"
+echo ""
+
+echo "=================================================="
+echo ""
+echo "🎉 Tamamlandıktan sonra:"
+echo ""
+echo "✅ Dashboard URL:"
+echo "   https://[your-username].github.io/olka-sprint-dashboard-live"
+echo ""
+echo "✅ Otomatik güncelleme:"
+echo "   Her 30 dakikada bir Jira'dan veri çeker"
+echo ""
+echo "=================================================="
+echo ""
+echo "Detaylı rehber: KURULUM_REHBERI.md"
+echo "Python script: update_dashboard.py"
+echo "Workflow config: .github/workflows/update.yml"
+echo ""
