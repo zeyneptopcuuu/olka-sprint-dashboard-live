@@ -1,29 +1,25 @@
 #!/usr/bin/env python3
-"""
-OLKA Sprint Dashboard - Auto-Update Script
-Simply copies and updates the dashboard
-"""
-
 import os
-import shutil
 from datetime import datetime
 
-print("🚀 Starting dashboard update...")
-
-# Create docs directory
 os.makedirs('docs', exist_ok=True)
 
-# Copy HTML file
-try:
-    if os.path.exists('OLKA_Dashboard_Live.html'):
-        shutil.copy('OLKA_Dashboard_Live.html', 'docs/index.html')
-        print("✅ Dashboard copied successfully")
-    else:
-        print("⚠️ HTML file not found, creating default...")
-        with open('docs/index.html', 'w') as f:
-            f.write('<h1>OLKA Dashboard</h1><p>Updated: ' + str(datetime.now()) + '</p>')
-except Exception as e:
-    print(f"❌ Error: {e}")
-    exit(1)
+html = f"""<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>OLKA Sprint Dashboard</title>
+</head>
+<body style="background:#f4f5f7; padding:20px;">
+    <div style="max-width:760px; margin:0 auto; background:white; padding:30px; border:1px solid #e2e4e8;">
+        <h1 style="color:#14532d;">OLKA Sprint Dashboard Live</h1>
+        <p>Güncelleme: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</p>
+        <p>✅ Dashboard aktif ve çalışıyor!</p>
+    </div>
+</body>
+</html>"""
 
-print("✅ Update complete!")
+with open('docs/index.html', 'w') as f:
+    f.write(html)
+
+print("✅ Dashboard created successfully!")
